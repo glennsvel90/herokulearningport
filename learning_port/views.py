@@ -17,9 +17,6 @@ def suggestion_view(request):
     form = forms.SuggestionForm()
     if request.method == 'POST':
         form = forms.SuggestionForm(request.POST)
-        if form.is_valid():
-            send_mail(
-                'Suggestion from {}'.format(form.cleaned_data['name']),
                 form.cleaned_data['suggestion'],
                 '{name} <{email}>'.format(**form.cleaned_data),
                 ['kenneth@teamtreehouse.com']
