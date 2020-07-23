@@ -5,15 +5,6 @@ from . import models
 
 class QuizForm(forms.ModelForm):
     """ The form for a quiz """
-    
-    class Meta:
-        model = models.Quiz
-        fields = [
-            'title',
-            'description',
-            'order',
-            'total_questions',
-        ]
 
 class QuestionForm(forms.ModelForm):
     """ The form for a question """
