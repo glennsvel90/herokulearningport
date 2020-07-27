@@ -20,13 +20,3 @@ class SuggestionForm(forms.Form):
                                validators=[must_be_empty]
                               )
     
-    def clean(self):
-        """ process and clean up the input information """
-        
-        cleaned_data = super().clean()
-        email = cleaned_data.get('email')
-        verify = cleaned_data.get('verify_email')
-        
-        if email != verify:
-            raise forms.ValidationError(
-                "You need to enter the same email in both fields")
