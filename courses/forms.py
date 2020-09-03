@@ -37,16 +37,7 @@ class MultipleChoiceQuestionForm(QuestionForm):
         ]
 
 
-class AnswerForm(forms.ModelForm):
-    """ The form for a question """
-    
-    class Meta:
-        model = models.Answer
-        fields = [
-            'order',
-            'text',
-            'correct'
-        ]
+
 AnswerFormSet = forms.modelformset_factory(
     models.Answer,
     form=AnswerForm,
