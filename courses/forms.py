@@ -25,19 +25,6 @@ class TrueFalseQuestionForm(QuestionForm):
         fields = ['order', 'prompt']
 
 
-class MultipleChoiceQuestionForm(QuestionForm):
-    """ The form for a multiple choice question """
-    
-    class Meta:
-        model = models.MultipleChoiceQuestion
-        fields = [
-            'order',
-            'prompt',
-            'shuffle_answers'
-        ]
-
-
-
 AnswerFormSet = forms.modelformset_factory(
     models.Answer,
     form=AnswerForm,
