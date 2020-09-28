@@ -12,10 +12,6 @@ class QuestionForm(forms.ModelForm):
 class TrueFalseQuestionForm(QuestionForm):
     """ The form for a true/false question """
     
-    class Meta:
-        model = models.TrueFalseQuestion
-        fields = ['order', 'prompt']
-
 
 AnswerFormSet = forms.modelformset_factory(
     models.Answer,
